@@ -11,10 +11,10 @@ class App extends React.Component {
         } = await fetchData();
 
         const modifiedData = {
-            confirmed: confirmed,
-            recovered: recovered,
-            deaths: deaths,
-            lastUpdate: lastUpdate,
+            confirmed,
+            recovered,
+            deaths,
+            lastUpdate,
         };
 
         return modifiedData;
