@@ -6,19 +6,10 @@ import { fetchData } from './api';
 
 class App extends React.Component {
     async componentDidMount() {
-        const {
-            data: { confirmed, recovered, deaths, lastUpdate },
-        } = await fetchData();
-
-        const modifiedData = {
-            confirmed,
-            recovered,
-            deaths,
-            lastUpdate,
-        };
-
-        return modifiedData;
-    }
+        const data = await fetchData();
+    
+        console.log(data);
+      }
 
     render() {
         return (
