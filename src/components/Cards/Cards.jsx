@@ -1,6 +1,7 @@
 import styles from './Cards.module.css';
 import { Card, Grid, CardContent, Typography } from '@material-ui/core';
 import CountUp from 'react-countup';
+import cl from 'classnames';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if (!confirmed) {
@@ -10,7 +11,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     return (
         <div className={styles.container}>
             <Grid container spacing={3} justifyContent='center'>
-                <Grid item component={Card}>
+                <Grid
+                    item
+                    component={Card}
+                    className={cl(styles.card, styles.infected)}
+                    xs={12}
+                    md={3}
+                >
                     <CardContent>
                         <Typography color='textSecondary' gutterBottom>
                             Infected
@@ -31,7 +38,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                         </Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component={Card}>
+                <Grid
+                    item
+                    component={Card}
+                    className={cl(styles.card, styles.recovered)}
+                    xs={12}
+                    md={3}
+                >
                     <CardContent>
                         <Typography color='textSecondary' gutterBottom>
                             Recovered
@@ -52,7 +65,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                         </Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component={Card}>
+                <Grid
+                    item
+                    component={Card}
+                    className={cl(styles.card, styles.deaths)}
+                    xs={12}
+                    md={3}
+                >
                     <CardContent>
                         <Typography color='textSecondary' gutterBottom>
                             Deaths
