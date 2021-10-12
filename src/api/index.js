@@ -28,3 +28,13 @@ export const fetchDailyData = async () => {
         console.error(error);
     }
 };
+
+export const countries = async () => {
+    try {
+        const response = await axios.get(`${url}/countries`);
+
+        console.log(response);
+    } catch (error) {
+        console.error(error);
+    }
+};
